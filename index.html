@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haloo Aku Putri</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffccff;
+            margin: 0;
+            font-family: 'Rubik Bubbles', cursive;
+        }
+        h1 {
+            font-size: 50px;
+            color: #ff007f;
+            animation: blink 1s infinite alternate, bounce 1.5s infinite;
+        }
+        @keyframes blink {
+            0% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 20px;
+        }
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        .lanjut {
+            background-color: #28a745;
+            color: white;
+        }
+        .gamau-pencet {
+            background-color: #dc3545;
+            color: white;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <h1>Haloo Aku Putri</h1>
+    <div class="buttons">
+        <button class="lanjut" onclick="window.location.href='index.html'">Lanjut</button>
+        <button class="gamau-pencet" onmouseover="pindahButton(this)">Tekan Ini</button>
+    </div>
+
+    <script>
+        function pindahButton(button) {
+            let x = Math.random() * (window.innerWidth - button.clientWidth);
+            let y = Math.random() * (window.innerHeight - button.clientHeight);
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        }
+    </script>
+</body>
+</html>
